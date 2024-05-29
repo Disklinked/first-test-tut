@@ -79,7 +79,7 @@ transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 10.9819, 0, 
 transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 0, 0.998348, -7.98679)
 
 [node name="StaticBody3D13" parent="Parts" instance=ExtResource("1_lchdw")]
-transform = Transform3D(4.99999, 0, 0, 0, 4.74034, 9.54198, 0, -1.59033, 28.442, -44.5862, 1.17979, -0.0514844)
+transform = Transform3D(4.99999, 0, 0, 0, 4.74034, 9.54198, 0, -1.59033, 28.442, -44.5862, 1.97761, -0.0514844)
 
 [node name="Ball" parent="Parts" instance=ExtResource("2_a3lnj")]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.0219764, 3.99339, -5.94524)
