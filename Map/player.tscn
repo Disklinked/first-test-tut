@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdqg0o7hkgi4p"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wj87n"]
+[ext_resource type="Script" path="res://Scripts/Ray.gd" id="2_4yv57"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6xan6"]
+
+[node name="Player" type="CharacterBody3D"]
+floor_stop_on_slope = false
+floor_max_angle = 0.349066
+script = ExtResource("1_wj87n")
+
+[node name="Pivot" type="Node3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="RotH" type="Node3D" parent="Pivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/RotH"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+current = true
+fov = 90.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Pivot/RotH"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+target_position = Vector3(0, 0, -5)
+collide_with_areas = true
+script = ExtResource("2_4yv57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6xan6")
+
+[node name="Mesh" type="Node3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Inv" type="Node3D" parent="."]
+
+[connection signal="destroy_node" from="Pivot/RotH/RayCast3D" to="Pivot/RotH/RayCast3D" method="_on_destroy_node"]

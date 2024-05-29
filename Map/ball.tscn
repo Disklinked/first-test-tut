@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxe2l2vksqkcp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_124l1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n0i6w"]
+
+[node name="Ball" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["Grabbable"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0405364, 0.0146774, 0.0130088)
+shape = SubResource("SphereShape3D_124l1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_n0i6w")

@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=3 uid="uid://cr4pd1njfr3va"]
+
+[ext_resource type="Script" path="res://Scripts/SpawnBalls.gd" id="1_33pb0"]
+[ext_resource type="PackedScene" uid="uid://v3ot1hub1ifk" path="res://Map/Box.tscn" id="1_lchdw"]
+[ext_resource type="PackedScene" uid="uid://bxe2l2vksqkcp" path="res://Map/ball.tscn" id="2_a3lnj"]
+[ext_resource type="PackedScene" uid="uid://cdqg0o7hkgi4p" path="res://Map/player.tscn" id="2_qxrce"]
+[ext_resource type="PackedScene" uid="uid://dh8nte5k2bg43" path="res://Map/slope.tscn" id="4_47sop"]
+[ext_resource type="PackedScene" uid="uid://dhvh5knahj32b" path="res://Map/spinner.tscn" id="4_vkhbq"]
+[ext_resource type="Script" path="res://Scripts/Lab.gd" id="5_jm6eu"]
+[ext_resource type="Script" path="res://Signals/Signal.gd" id="6_h6t14"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1osp4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_l8n04"]
+sky_material = SubResource("ProceduralSkyMaterial_1osp4")
+
+[sub_resource type="Environment" id="Environment_wi3tl"]
+background_mode = 2
+sky = SubResource("Sky_l8n04")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_14yx4"]
+line_spacing = 1.0
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="Map" type="Node3D"]
+transform = Transform3D(1.00165, 0, 0, 0, 1.00165, 0, 0, 0, 1.00165, 0, 0, 0)
+script = ExtResource("1_33pb0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wi3tl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Parts" type="Node3D" parent="."]
+
+[node name="StaticBody3D" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 0, 0, 0)
+
+[node name="StaticBody3D8" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(27.9573, 0, 0, 0, 1.0014, 0, 0, 0, 25.9038, -56.6405, 0, 0)
+
+[node name="StaticBody3D9" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(2.79572, 0, 0, 0, 19.0244, 0, 0, 0, 25.9038, -69.619, 0, 0)
+
+[node name="StaticBody3D10" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(2.79572, 0, 0, 0, 19.0244, 0, 0, 0, 25.9038, -43.6618, 0, 0)
+
+[node name="StaticBody3D11" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(-1.22205e-07, 0, 25.9038, 0, 19.0244, 0, -2.79572, 0, -1.13229e-06, -56.6404, 0, 12.9786)
+
+[node name="StaticBody3D12" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(-1.22205e-07, 0, 25.9038, 0, 19.0244, 0, -2.79572, 0, -1.13229e-06, -56.6404, 0, -12.9786)
+
+[node name="StaticBody3D6" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(40.2769, 0, 0, 0, 6.57347, 0, 0, 0, 1.40328, 0, 0, 6.98847)
+
+[node name="StaticBody3D7" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(-3.8684e-06, 0, 1.41028, 0, 6.60628, 0, -88.4986, 0, -6.16455e-08, -4.99176, 0, 1.9967)
+
+[node name="StaticBody3D3" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 10.9819, 0, 0)
+
+[node name="StaticBody3D5" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(5.67997, 0, 0, 0, 1.0014, 0, 0, 0, 4.6798, 10.9819, 0.998352, 0)
+
+[node name="StaticBody3D4" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 10.9819, 0, 13.9769)
+
+[node name="StaticBody3D2" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(11.2278, 0, 0, 0, 1.0014, 0, 0, 0, 14.0328, 0, 0.998348, -7.98679)
+
+[node name="StaticBody3D13" parent="Parts" instance=ExtResource("1_lchdw")]
+transform = Transform3D(4.99999, 0, 0, 0, 4.74034, 9.54198, 0, -1.59033, 28.442, -44.5862, 1.17979, -0.0514844)
+
+[node name="Ball" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.0219764, 3.99339, -5.94524)
+
+[node name="Ball2" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34491, 3.99339, -4.75848)
+
+[node name="Ball3" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.921767, -0.38774, 0, 0.38774, 0.921767, -0.0219764, 4.22347, -8.19046)
+
+[node name="Ball4" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(1, 0, 0, 0, 0.921768, -0.387741, 0, 0.387741, 0.921768, 2.34491, 3.76331, -7.09654)
+
+[node name="Ball5" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(0.459298, -0.692222, -0.527597, -0.39738, 0.341495, -0.860106, 0.794437, 0.57102, -0.125201, 0.0734515, 5.76641, -5.80202)
+
+[node name="Ball6" parent="Parts" instance=ExtResource("2_a3lnj")]
+transform = Transform3D(0.526406, 0.32967, 0.783717, 0, 0.921768, -0.387741, -0.850232, 0.204109, 0.485225, 2.24948, 5.30626, -7.23858)
+
+[node name="spinner" parent="Parts" instance=ExtResource("4_vkhbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6404, 0.413987, -0.998348)
+
+[node name="point" type="Node3D" parent="Parts/spinner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.4015, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_qxrce")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -46.402, 14.2261, 13.2)
+
+[node name="Slope" parent="." instance=ExtResource("4_47sop")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 1.99671, -1.99671)
+
+[node name="Slope2" parent="." instance=ExtResource("4_47sop")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.99671, 1.9967, -1.99671)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 208.0
+offset_bottom = 25.0
+pivot_offset = Vector2(21, 10)
+text = "NaN"
+label_settings = SubResource("LabelSettings_14yx4")
+autowrap_mode = 3
+uppercase = true
+script = ExtResource("5_jm6eu")
+
+[node name="Signals" type="Node" parent="."]
+script = ExtResource("6_h6t14")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8045, 6.46161, 0)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhvh5knahj32b"]
+
+[ext_resource type="Script" path="res://Scripts/swinger.gd" id="1_gnq3n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_puwlm"]
+friction = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i1f6g"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o6m6w"]
+size = Vector3(10, 1, 1)
+
+[node name="spinner" type="Node3D"]
+script = ExtResource("1_gnq3n")
+metadata/_edit_group_ = true
+
+[node name="blc" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_puwlm")
+constant_torque = Vector3(0, 400, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="blc"]
+shape = SubResource("BoxShape3D_i1f6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="blc"]
+mesh = SubResource("BoxMesh_o6m6w")
