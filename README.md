@@ -1,6 +1,6 @@
 # how to access the game
 TO DOWNLOAD THE FOLDER GO TO CODE DROPDOWN BUTTON THEN CLICK DOWNLOAD ZIP
-![img1!](imgs/builds%20fold.png)
+![img1!](imgs/download%20zip.png)
 
 extract the folder
 ![img2!](imgs/extract%20fold.png)
