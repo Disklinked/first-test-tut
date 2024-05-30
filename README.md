@@ -1,4 +1,10 @@
 # how to access the game
+
+alternative#1 download the zip on itch
+https://disklinked.itch.io/amazing-game
+
+alternative#2 download the zip on github i'd say itch is better than github but your choice
+
 TO DOWNLOAD THE FOLDER GO TO CODE DROPDOWN BUTTON THEN CLICK DOWNLOAD ZIP
 ![img1!](imgs/download%20zip.png)
 
